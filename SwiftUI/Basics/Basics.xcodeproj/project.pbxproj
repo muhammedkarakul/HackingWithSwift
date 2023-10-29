@@ -11,6 +11,7 @@
 		BE83746E2AEED9F200487064 /* CreatingViewsInLoop.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE83746D2AEED9F200487064 /* CreatingViewsInLoop.swift */; };
 		BE8374702AEED9F300487064 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE83746F2AEED9F300487064 /* Assets.xcassets */; };
 		BE8374732AEED9F300487064 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE8374722AEED9F300487064 /* Preview Assets.xcassets */; };
+		BE83747A2AEEE02A00487064 /* CreatingForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8374792AEEE02A00487064 /* CreatingForm.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		BE83746D2AEED9F200487064 /* CreatingViewsInLoop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingViewsInLoop.swift; sourceTree = "<group>"; };
 		BE83746F2AEED9F300487064 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE8374722AEED9F300487064 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BE8374792AEEE02A00487064 /* CreatingForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingForm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				BE83746B2AEED9F200487064 /* BasicsApp.swift */,
 				BE83746D2AEED9F200487064 /* CreatingViewsInLoop.swift */,
+				BE8374792AEEE02A00487064 /* CreatingForm.swift */,
 				BE83746F2AEED9F300487064 /* Assets.xcassets */,
 				BE8374712AEED9F300487064 /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE83747A2AEEE02A00487064 /* CreatingForm.swift in Sources */,
 				BE83746E2AEED9F200487064 /* CreatingViewsInLoop.swift in Sources */,
 				BE83746C2AEED9F200487064 /* BasicsApp.swift in Sources */,
 			);

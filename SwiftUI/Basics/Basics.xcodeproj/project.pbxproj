@@ -14,6 +14,7 @@
 		BE83747A2AEEE02A00487064 /* CreatingForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8374792AEEE02A00487064 /* CreatingForm.swift */; };
 		BE83747C2AEEE1F500487064 /* AddingNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE83747B2AEEE1F500487064 /* AddingNavigationBar.swift */; };
 		BE83747E2AEEE49100487064 /* ModifyingProgramState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE83747D2AEEE49100487064 /* ModifyingProgramState.swift */; };
+		BE8374802AEEE6B000487064 /* CreatingPickersInForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE83747F2AEEE6B000487064 /* CreatingPickersInForm.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		BE8374792AEEE02A00487064 /* CreatingForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingForm.swift; sourceTree = "<group>"; };
 		BE83747B2AEEE1F500487064 /* AddingNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingNavigationBar.swift; sourceTree = "<group>"; };
 		BE83747D2AEEE49100487064 /* ModifyingProgramState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyingProgramState.swift; sourceTree = "<group>"; };
+		BE83747F2AEEE6B000487064 /* CreatingPickersInForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingPickersInForm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				BE8374792AEEE02A00487064 /* CreatingForm.swift */,
 				BE83747B2AEEE1F500487064 /* AddingNavigationBar.swift */,
 				BE83747D2AEEE49100487064 /* ModifyingProgramState.swift */,
+				BE83747F2AEEE6B000487064 /* CreatingPickersInForm.swift */,
 				BE83746F2AEED9F300487064 /* Assets.xcassets */,
 				BE8374712AEED9F300487064 /* Preview Content */,
 			);
@@ -147,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE83747C2AEEE1F500487064 /* AddingNavigationBar.swift in Sources */,
+				BE8374802AEEE6B000487064 /* CreatingPickersInForm.swift in Sources */,
 				BE83747E2AEEE49100487064 /* ModifyingProgramState.swift in Sources */,
 				BE83747A2AEEE02A00487064 /* CreatingForm.swift in Sources */,
 				BE83746E2AEED9F200487064 /* CreatingViewsInLoop.swift in Sources */,

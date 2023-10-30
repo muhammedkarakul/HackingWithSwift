@@ -11,6 +11,7 @@ struct CreatingPickersInForm: View {
     @State private var checkAmount: Double = .zero
     @State private var numberOfPeople: Int = 2
     @State private var tipPercentage: Int = 20
+    @FocusState private var amountIsFocused: Bool
     
     private let tipPercentages = [10, 15, 20, 25, 0]
     
@@ -37,6 +38,7 @@ struct CreatingPickersInForm: View {
                               value: $checkAmount,
                               format: .currency(code: currencyCode))
                     .keyboardType(.decimalPad)
+                    .focused($amountIsFocused)
                     
                     Picker("Number of people",
                            selection: $numberOfPeople) {
@@ -60,6 +62,13 @@ struct CreatingPickersInForm: View {
                 }
             }
             .navigationTitle("WeSplit")
+            .toolbar {
+                if amountIsFocused {
+                    Button("Done") {
+                        amountIsFocused = false
+                    }
+                }
+            }
         }
     }
 }

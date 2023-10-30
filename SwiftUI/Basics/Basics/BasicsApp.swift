@@ -11,7 +11,7 @@ import SwiftUI
 struct BasicsApp: App {
     var body: some Scene {
         WindowGroup {
-            ReadingTextFromTextField()
+            CreatingPickersInForm()
         }
     }
 }

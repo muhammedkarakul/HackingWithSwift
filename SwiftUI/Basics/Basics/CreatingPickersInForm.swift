@@ -8,20 +8,38 @@
 import SwiftUI
 
 struct CreatingPickersInForm: View {
-    @State private var checkAmount: Float = .zero
+    @State private var checkAmount: Double = .zero
     @State private var numberOfPeople: Int = 2
     @State private var tipPercentage: Int = 20
     
     private let tipPercentages = [10, 15, 20, 25, 0]
     
+    private var currencyCode: String {
+        Locale.current.currency?.identifier ?? "USD"
+    }
+    
+    private var totalPerPerson: Double {
+        let peopleCount = Double(numberOfPeople)
+        let tipSelection = Double(tipPercentage)
+        
+        let tipValue = checkAmount / 100 * tipSelection
+        let grandTotal = checkAmount + tipValue
+        let amountPerPerson = grandTotal / peopleCount
+        
+        return amountPerPerson
+    }
+    
     var body: some View {
         NavigationStack {
             Form {
                 Section {
-                    TextField("Amount", value: $checkAmount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
-                        .keyboardType(.decimalPad)
+                    TextField("Amount",
+                              value: $checkAmount,
+                              format: .currency(code: currencyCode))
+                    .keyboardType(.decimalPad)
                     
-                    Picker("Number of people", selection: $numberOfPeople) {
+                    Picker("Number of people",
+                           selection: $numberOfPeople) {
                         ForEach(2..<100) {
                             Text("\($0) people")
                         }
@@ -37,7 +55,7 @@ struct CreatingPickersInForm: View {
                     .pickerStyle(.segmented)
                 }
                 Section {
-                    Text(checkAmount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                    Text(totalPerPerson, format: .currency(code: currencyCode))
                         .keyboardType(.decimalPad)
                 }
             }

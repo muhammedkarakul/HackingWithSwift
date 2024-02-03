@@ -12,8 +12,12 @@ struct ContentView: View {
     @State private var correctAnswer = Int.random(in: 0...2)
     
     @State private var showingScore = false
+    @State private var isGameOver = false
     @State private var scoreTitle = ""
+    @State private var gameOverTitle = ""
     @State private var score = 0
+    @State private var currentQuestionNumber = 1
+    private let numberOfQuestions = 3
     
     var body: some View {
         ZStack {
@@ -37,9 +41,14 @@ struct ContentView: View {
             }
         }
         .alert(scoreTitle, isPresented: $showingScore) {
-            Button("Continue", action: askQuestion)
+            Button("Continue", action: askQuestionIfGameNotOvered)
         } message: {
             Text("Your score is \(score)")
+        }
+        .alert(gameOverTitle, isPresented: $isGameOver) {
+            Button("Restart", action: restartGame)
+        } message: {
+            Text("Your final score is \(score)")
         }
     }
     
@@ -48,16 +57,32 @@ struct ContentView: View {
             scoreTitle = "Correct"
             score += 10
         } else {
-            scoreTitle = "Wrong"
+            scoreTitle = "Wrong! That's the flag of \(countries[number])"
             score -= 5
         }
         
         showingScore = true
     }
     
-    func askQuestion() {
-        countries.shuffle()
-        correctAnswer = Int.random(in: 0...2)
+    func askQuestionIfGameNotOvered() {
+        if currentQuestionNumber == numberOfQuestions {
+            if score > .zero {
+                gameOverTitle = "Congrats, You Win! 🥳"
+            } else {
+                gameOverTitle = "Sorry, You Lose. 😔"
+            }
+            isGameOver = true
+        } else {
+            countries.shuffle()
+            correctAnswer = Int.random(in: 0...2)
+            currentQuestionNumber += 1
+        }
+    }
+    
+    func restartGame() {
+        currentQuestionNumber = .zero
+        score = .zero
+        askQuestionIfGameNotOvered()
     }
 }
 

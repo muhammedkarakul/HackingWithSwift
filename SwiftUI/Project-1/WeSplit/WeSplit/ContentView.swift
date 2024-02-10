@@ -7,6 +7,30 @@
 
 import SwiftUI
 
+struct PercentageStyle: ViewModifier {
+    private let shouldApplyForeground: Bool
+    
+    func body(content: Content) -> some View {
+        if shouldApplyForeground {
+            content
+                .foregroundStyle(.red)
+        } else {
+            content
+        }
+    }
+    
+    init(shouldApplyForeground: Bool) {
+        self.shouldApplyForeground = shouldApplyForeground
+    }
+}
+
+extension Text {
+    
+    func percentageStyle(for number: Int) -> some View {
+        modifier(PercentageStyle(shouldApplyForeground: number == .zero))
+    }
+}
+
 struct ContentView: View {
     @State private var checkAmount = 0.0
     @State private var numberOfPeople = 2
@@ -56,6 +80,7 @@ struct ContentView: View {
                 
                 Section {
                     Text(totalPerPerson, format: .currency(code: currencyCode))
+                        .percentageStyle(for: tipPercentage)
                 }
             }
             .navigationTitle("WeSplit")

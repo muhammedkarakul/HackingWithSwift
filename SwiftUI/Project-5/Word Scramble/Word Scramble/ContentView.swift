@@ -16,6 +16,8 @@ struct ContentView: View {
     @State private var alertMessage = ""
     @State private var showingAlert = false
     
+    @State private var score = 0
+    
     var body: some View {
         NavigationStack {
             List {
@@ -39,6 +41,13 @@ struct ContentView: View {
             .alert(alertTitle, isPresented: $showingAlert) { } message: {
                 Text(alertMessage)
             }
+            .toolbar(content: {
+                Button("Restart") {
+                    startGame()
+                }
+                
+                Text("Score: \(score)")
+            })
          }
     }
     
@@ -49,11 +58,22 @@ struct ContentView: View {
         }
         let words = content.components(separatedBy: "\n")
         rootWord = words.randomElement() ?? "silkworm"
+        score = .zero
     }
     
     private func addNewWord() {
         let answer = newWord.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
         guard answer.count > 0 else { return }
+        
+        guard isSame(word: answer) else {
+            wordErrorAlert(withTitle: "Word same as root", andMessage: "Don't be lazy!")
+            return
+        }
+        
+        guard isTooShort(word: answer) else {
+            wordErrorAlert(withTitle: "Word too short", andMessage: "Be more generous and put some letter!")
+            return
+        }
         
         guard isOrginal(word: answer) else {
             wordErrorAlert(withTitle: "Word used already", andMessage: "Be more orginal")
@@ -72,8 +92,17 @@ struct ContentView: View {
         
         withAnimation {
             usedWord.insert(answer, at: .zero)
+            score += 1
         }
         newWord = ""
+    }
+    
+    private func isSame(word: String) -> Bool {
+        word != rootWord
+    }
+    
+    private func isTooShort(word: String) -> Bool {
+        word.count > 2
     }
     
     private func isOrginal(word: String) -> Bool {

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:README.md">
+   </FileRef>
+   <FileRef
+      location = "group:Project-6/Animations/Animations.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Project-5/Word Scramble/Word Scramble.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Project-4/BetterRest/BetterRest.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Project-3/Keypoints/Keypoints.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Project-3/Challenge/Challenge.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Project-3/ViewsAndModifiers/ViewsAndModifiers.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Project-2/Guess The Flag/Guess The Flag.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Basics/../Project-1/WeSplit/WeSplit.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Basics/Basics.xcodeproj">
+   </FileRef>
+</Workspace>

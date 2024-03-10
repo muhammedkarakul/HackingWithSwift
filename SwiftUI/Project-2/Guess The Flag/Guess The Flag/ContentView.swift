@@ -31,6 +31,9 @@ struct ContentView: View {
     @State private var currentQuestionNumber = 1
     private let numberOfQuestions = 3
     
+    @State private var rotationAmount: CGFloat = .zero
+    @State private var isFlagSelected = false
+    
     var body: some View {
         ZStack {
             Color.blue
@@ -45,10 +48,17 @@ struct ContentView: View {
                 
                 ForEach(0..<3) { number in
                     Button {
-                        flagTapped(number)
+                        withAnimation {
+                            flagTapped(number)
+                        }
                     } label: {
                         FlagImage(name: countries[number])
                     }
+                    .rotation3DEffect(
+                        .degrees(number == correctAnswer ? rotationAmount : .zero),
+                        axis: (x: 0.0, y: 1.0, z: 0.0)
+                    )
+                    .opacity(isFlagSelected ? (number == correctAnswer ? 1.0 : 0.75) : 1.0)
                 }
             }
         }
@@ -68,12 +78,14 @@ struct ContentView: View {
         if number == correctAnswer {
             scoreTitle = "Correct"
             score += 10
+            rotationAmount += 360
         } else {
             scoreTitle = "Wrong! That's the flag of \(countries[number])"
             score -= 5
         }
         
         showingScore = true
+        isFlagSelected = true
     }
     
     func askQuestionIfGameNotOvered() {
@@ -88,6 +100,7 @@ struct ContentView: View {
             countries.shuffle()
             correctAnswer = Int.random(in: 0...2)
             currentQuestionNumber += 1
+            isFlagSelected = false
         }
     }
     

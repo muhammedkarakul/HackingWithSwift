@@ -5,6 +5,9 @@
       location = "group:README.md">
    </FileRef>
    <FileRef
+      location = "group:Project-Challenge/Edutainment/Edutainment.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Project-6/Animations/Animations.xcodeproj">
    </FileRef>
    <FileRef

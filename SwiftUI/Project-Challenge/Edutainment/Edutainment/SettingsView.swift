@@ -9,8 +9,10 @@ import SwiftUI
 
 struct SettingsView: View {
     
-    @State private var multiplicationNumber = 2
-    @State private var numberOfQuestions = 1
+    @State private(set) var multiplicationNumber = 2
+    @State private(set) var numberOfQuestions = 5
+    
+    private let numberOfQuestionOption: [Int] = [5, 10, 20]
     
     var body: some View {
         NavigationStack {
@@ -20,7 +22,13 @@ struct SettingsView: View {
                 }
                 
                 Section("How many question do you want to ask??") {
-                    Stepper("Number of questions: \(numberOfQuestions)", value: $numberOfQuestions, in: 1...20, step: 1)
+                    
+                    Picker("Number of questions", selection: $numberOfQuestions) {
+                        ForEach(numberOfQuestionOption, id: \.self) {
+                            Text("\($0)")
+                        }
+                    }
+                    .pickerStyle(.segmented)
                 }
             }
             .navigationTitle("Settings")

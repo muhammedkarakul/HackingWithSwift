@@ -34,7 +34,7 @@
 - [x] Day 32 – Project 6, part one
 - [x] Day 33 – Project 6, part two
 - [x] Day 34 – Project 6, part three
-- [ ] Day 35 – Milestone: Projects 4-6
+- [x] Day 35 – Milestone: Projects 4-6
 - [ ] Day 36 – Project 7, part one
 - [ ] Day 37 – Project 7, part two
 - [ ] Day 38 – Project 7, part three

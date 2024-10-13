@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		82374D912C4C2288001CF159 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82374D902C4C2288001CF159 /* GameView.swift */; };
+		82B66F242CBAE8BE006AB3BD /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B66F232CBAE8B9006AB3BD /* Question.swift */; };
 		BE5EDC722BD5741600CCEBAE /* EdutainmentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5EDC712BD5741600CCEBAE /* EdutainmentApp.swift */; };
 		BE5EDC742BD5741600CCEBAE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5EDC732BD5741600CCEBAE /* SettingsView.swift */; };
 		BE5EDC762BD5741800CCEBAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE5EDC752BD5741800CCEBAE /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 
 /* Begin PBXFileReference section */
 		82374D902C4C2288001CF159 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		82B66F232CBAE8B9006AB3BD /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		BE5EDC6E2BD5741600CCEBAE /* Edutainment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Edutainment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE5EDC712BD5741600CCEBAE /* EdutainmentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdutainmentApp.swift; sourceTree = "<group>"; };
 		BE5EDC732BD5741600CCEBAE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 		BE5EDC702BD5741600CCEBAE /* Edutainment */ = {
 			isa = PBXGroup;
 			children = (
+				82B66F232CBAE8B9006AB3BD /* Question.swift */,
 				BE5EDC712BD5741600CCEBAE /* EdutainmentApp.swift */,
 				BE5EDC732BD5741600CCEBAE /* SettingsView.swift */,
 				BE5EDC752BD5741800CCEBAE /* Assets.xcassets */,
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE5EDC742BD5741600CCEBAE /* SettingsView.swift in Sources */,
+				82B66F242CBAE8BE006AB3BD /* Question.swift in Sources */,
 				82374D912C4C2288001CF159 /* GameView.swift in Sources */,
 				BE5EDC722BD5741600CCEBAE /* EdutainmentApp.swift in Sources */,
 			);

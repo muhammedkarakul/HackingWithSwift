@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct GameView: View {
+    
+    @State var questionNumber: Int = 0
+    @State var settingsView = SettingsView()
+    private var questions: [Question] = []
+    
     var body: some View {
         NavigationStack {
             HStack {
@@ -19,11 +24,17 @@ struct GameView: View {
             }
             .navigationTitle("Game")
             .toolbar {
-                NavigationLink(destination: SettingsView()) {
+                Button("Play", action: startGame)
+                NavigationLink(destination: settingsView) {
                     Text("Settings")
                 }
             }
         }
+    }
+    
+    func startGame() {
+        print(settingsView.$numberOfQuestions)
+        print(settingsView.$multiplicationNumber)
     }
 }
 
